@@ -65,7 +65,9 @@ public class Shoe {
 	//Class Methods----------------------------------------------------
 	
 	public String toString() {
-		String order = "Laces: " + laces.toString() + "\nBody: " + body.toString() + "\nSole: " + sole.toString()
+		String order = "Laces: " + laces.toString() + 
+				"\nBody: " + body.toString() + 
+				"\nSole: " + sole.toString()
 		return order;
 	}	
 }
