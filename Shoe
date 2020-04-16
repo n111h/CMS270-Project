@@ -1,0 +1,73 @@
+
+public class Shoe {
+
+	//Data members----------------------------------------------------
+	
+	private Lace laces;
+	private Sole sole;
+	private Body body;
+	private boolean completed;
+	
+	//-----------------------------------------------------------------
+	//-----------------------------------------------------------------
+	
+	//Constructors-----------------------------------------------------
+	
+	public Shoe() {}
+	
+	public Shoe(Lace laces, Sole sole, Body body, boolean complete) {
+		this.laces = laces;
+		this.sole = sole;
+		this.body = body;
+		this.completed = complete;
+	}
+	
+	//-----------------------------------------------------------------
+	//-----------------------------------------------------------------
+	
+	//Getters and setters----------------------------------------------
+
+	public Lace getLaces() {
+		return laces;
+	}
+
+	public void setLaces(Lace laces) {
+		this.laces = laces;
+	}
+
+	public Sole getSole() {
+		return sole;
+	}
+
+	public void setSole(Sole sole) {
+		this.sole = sole;
+	}
+
+	public Body getBody() {
+		return body;
+	}
+
+	public void setBody(Body body) {
+		this.body = body;
+	}
+
+	public boolean isCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(boolean completed) {
+		this.completed = completed;
+	}
+	
+	//-----------------------------------------------------------------
+	//-----------------------------------------------------------------
+	
+	//Class Methods----------------------------------------------------
+	
+	public String toString() {
+		String order = "Laces: " + laces.toString() + 
+				"\nBody: " + body.toString() + 
+				"\nSole: " + sole.toString()
+		return order;
+	}	
+}
