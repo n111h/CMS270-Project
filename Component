@@ -1,0 +1,41 @@
+public class Component extends Item {
+	
+	//data members
+	private int reorderDate;
+	private boolean used;
+	
+	//empty constructor
+	public Component(int i, int n,int r,boolean u) {
+		super();
+		reorderDate = r;
+		used = u;
+	}
+	public Component() {
+		
+	}
+	//getters and setters 
+	public int getReorderDate() {
+		return reorderDate;
+	}
+	public void setReorderDate(int reorderDate) {
+		this.reorderDate = reorderDate;
+	}
+	public boolean isUsed() {
+		return used;
+	}
+	public void setUsed(boolean used) {
+		this.used = used;
+	}
+	//class methods
+	public String toString() {
+		String statement = "Component Date For Reorder: "+reorderDate+"Usage:"+used;
+		return statement;
+	}
+	public void reOrder() {
+		System.out.println("This component needs to be reordered");
+	}
+	public void use() {
+		System.out.println("This component will be used.");
+	}
+
+}
