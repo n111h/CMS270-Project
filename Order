@@ -1,0 +1,57 @@
+public class Order {
+	
+	
+	//data members 
+	private String customer; 
+	private int orderDate; 
+	private double total; 
+	private Shoe[] cart;
+	
+	//constructors 
+	//empty constructor 
+	public Order() {
+		
+	}
+	//constructor with parameters
+	public Order(String c, int o, Shoe[] crt, double t) {
+		this.customer = c;
+		this.orderDate = o;
+		this.cart = crt; 
+		this.total = t;
+	}
+	//class methods 
+	//getters and setters 
+	public String getCustomer() {
+		return customer;
+	}
+	public void setCustomer(String customer) {
+		this.customer = customer;
+	}
+	public int getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(int orderDate) {
+		this.orderDate = orderDate;
+	}
+	public double getTotal() {
+		return total;
+	}
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	public Shoe[] getCart() {
+		return cart;
+	}
+	public void setCart(Shoe[] cart) {
+		this.cart = cart;
+	}
+	
+	public String toString() {
+		String order = "Customer: "+customer+"Order Date: "+orderDate+"Cart Contents: "+cart+"Subtotal: $"+total;
+		return order;
+		
+	}
+	
+
+}
+
