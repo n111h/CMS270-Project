@@ -1,0 +1,40 @@
+public class Lace extends Component{
+	
+	//data members 
+	private String color;
+	private double length;
+	
+	//constructor 
+	public Lace(int i, int n,int r,boolean u, String c, double l) {
+		super();
+		color = c;
+		length = l;
+	}
+
+	//getters and setters 
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	public void setLength(double length) {
+		this.length = length;
+	}
+	
+	public String toString() {
+		String lace = "Color: "+color+"Length: "+length+"inches";
+		return lace;
+	}
+	
+	
+	
+	
+
+}
