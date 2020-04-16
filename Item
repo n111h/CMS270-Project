@@ -1,0 +1,36 @@
+
+public class Item {
+	
+	//data members 
+	private int id;
+	private int nextId;
+	
+	
+	//empty constructor
+	public Item() {
+		
+	}
+	//constructor with parameter
+	public Item(int i,int n) {
+		id = i;
+		nextId = n;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getNextId() {
+		return nextId;
+	}
+	public void setNextId(int nextId) {
+		this.nextId = nextId;
+	}
+	
+	public String toString() {
+		String s = "Item ID #";
+		return s;
+	}
+
+}
