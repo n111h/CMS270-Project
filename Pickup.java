@@ -48,9 +48,9 @@ public class Pickup extends Ship{
 	
 	public String toString() {
 		
-		System.out.println(super.toString() +
-				"\nDirect Customer: " + directCustomer +
-				"\nReady: " + ready);
+		return super.toString() +
+	          "\nDirect Customer: " + directCustomer +
+			    "\nReady: " + ready;
 		
 	}
 	
