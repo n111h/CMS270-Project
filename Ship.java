@@ -74,18 +74,18 @@ public class Ship extends Wait{
 	
 	public String trackOrder() {
 		
-		System.out.println("Tracking Number: " + trackingNumber +
-				 "\nShippinh Company: " + shippingCompany +
-				 "\nExpected Shipping Date: " + expectedShippingDate);
+		return "Tracking Number: " + trackingNumber +
+		    "\nShippinh Company: " + shippingCompany +
+	      "\nExpected Shipping Date: " + expectedShippingDate;
 		
 	}
 	
 	public String toString() {
 		
-		System.out.println(super.toString() + 
-				 "\nTracking Number: " + trackingNumber +
-				 "\nShippinh Company: " + shippingCompany +
-				 "\nExpected Shipping Date: " + expectedShippingDate);
+		return super.toString() + 
+	          "\nTracking Number: " + trackingNumber +
+		 "\nShippinh Company: " + shippingCompany +
+	   "\nExpected Shipping Date: " + expectedShippingDate;
 		
 	}
 	
