@@ -1,0 +1,9 @@
+L 50 R 12
+L 50 G 12
+L 50 B 12
+S 50 R 12 Hermes
+S 50 G 12 Hermes
+S 50 B 12 Gucchi
+B 50 R 12 Hermes Leather
+B 50 G 12 Gucchi Cotton
+B 50 B 12 Gucchi Polyester
