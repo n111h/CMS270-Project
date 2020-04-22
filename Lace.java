@@ -4,72 +4,72 @@
 //  DUE DATE:		:  23042020
 //  HONOR CODE:		:  "On my honor, I have not given, nor received, nor witnessed any unauthorized assistance on this work."
 
-public class Pickup extends Ship
+public class Lace extends Component
 {
 	//  DATA MEMBERS  /////////////////////////////////////////////////////////////////
 	
-	private String directCustomer;
-	private boolean ready;
+	private String color;
+	private double length;
 	
 	//  CONSTRUCTORS  /////////////////////////////////////////////////////////////////
 	
-	public Pickup()
+	public Lace()
 	{
 		super();
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public Pickup(String c, boolean r)
+	public Lace(String c, double l)
 	{
 		super();
-		this.directCustomer = c;
-		this.ready = r;
+		this.color = c;
+		this.length = l;
+		this.setUsed(false);
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public Pickup(String customer, int orderDate, Shoe[] cart, double total, int shipDate, boolean cancel, 
-			String shipCompany, String address, String tracking, double shipCost, String c, boolean r)
+	public Lace(String c, double l, double cost)
 	{
-		super(customer, orderDate, cart, total, shipDate, cancel, shipCompany, address, tracking, shipCost);
-		this.directCustomer = c;
-		this.ready = r;
+		super(cost);
+		this.color = c;
+		this.length = l;
+		this.setUsed(false);
 	}
 	
 	//  SETTERS  //////////////////////////////////////////////////////////////////////
 	
-	public void setDirectCustomer(String c)
+	public void setColor(String c)
 	{
-		this.directCustomer = c;
+		this.color = c;
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public void setReady(boolean r)
+	public void setLength(double l)
 	{
-		this.ready = r;
+		this.length = l;
 	}
 	
 	//  GETTERS  //////////////////////////////////////////////////////////////////////
 	
-	public String getSirectCustomer()
+	public String getColor()
 	{
-		return(this.directCustomer);
+		return(this.color);
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public boolean getReady()
+	public double getLength()
 	{
-		return(this.ready);
+		return(this.length);
 	}
 	
 	//  METHODS  //////////////////////////////////////////////////////////////////////
 	
 	public String toString()
 	{
-		return(String.format("%sPICKUP CUSTOMER:  %s\nPICKUP IS READY:  %s\n", super.toString(), this.directCustomer, 
-				(this.ready) ? "YES":"NO"));
+		return(String.format("%sLACE COLOR:  %s\nLACE LENGTH:  %.2f in\n", super.toString(), this.color, this.length));
 	}
 }

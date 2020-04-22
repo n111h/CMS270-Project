@@ -4,72 +4,90 @@
 //  DUE DATE:		:  23042020
 //  HONOR CODE:		:  "On my honor, I have not given, nor received, nor witnessed any unauthorized assistance on this work."
 
-public class Pickup extends Ship
+public class Sole extends Component
 {
 	//  DATA MEMBERS  /////////////////////////////////////////////////////////////////
 	
-	private String directCustomer;
-	private boolean ready;
+	private String color;
+	private double size;
+	private String pattern;
 	
 	//  CONSTRUCTORS  /////////////////////////////////////////////////////////////////
 	
-	public Pickup()
+	public Sole()
 	{
 		super();
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public Pickup(String c, boolean r)
+	public Sole(String c, double s, String p)
 	{
 		super();
-		this.directCustomer = c;
-		this.ready = r;
+		this.color = c;
+		this.size = s;
+		this.pattern = p;
+		this.setUsed(false);
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public Pickup(String customer, int orderDate, Shoe[] cart, double total, int shipDate, boolean cancel, 
-			String shipCompany, String address, String tracking, double shipCost, String c, boolean r)
+	public Sole(String c, double s, String p, double cost)
 	{
-		super(customer, orderDate, cart, total, shipDate, cancel, shipCompany, address, tracking, shipCost);
-		this.directCustomer = c;
-		this.ready = r;
+		super(cost);
+		this.color = c;
+		this.size = s;
+		this.pattern = p;
+		this.setUsed(false);
 	}
 	
 	//  SETTERS  //////////////////////////////////////////////////////////////////////
 	
-	public void setDirectCustomer(String c)
+	public void setColor(String c)
 	{
-		this.directCustomer = c;
+		this.color = c;
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public void setReady(boolean r)
+	public void setSize(double s)
 	{
-		this.ready = r;
+		this.size = s;
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public void setPattern(String p)
+	{
+		this.pattern = p;
 	}
 	
 	//  GETTERS  //////////////////////////////////////////////////////////////////////
 	
-	public String getSirectCustomer()
+	public String getColor()
 	{
-		return(this.directCustomer);
+		return(this.color);
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public boolean getReady()
+	public double getSize()
 	{
-		return(this.ready);
+		return(this.size);
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public String getPattern()
+	{
+		return(this.pattern);
 	}
 	
 	//  METHODS  //////////////////////////////////////////////////////////////////////
 	
 	public String toString()
 	{
-		return(String.format("%sPICKUP CUSTOMER:  %s\nPICKUP IS READY:  %s\n", super.toString(), this.directCustomer, 
-				(this.ready) ? "YES":"NO"));
+		return(String.format("%sSOLE COLOR:  %s\nSOLE SIZE:  %.1f\nSOLE PATTERN:  %s\n", super.toString(),
+				this.color, this.size, this.pattern));
 	}
 }

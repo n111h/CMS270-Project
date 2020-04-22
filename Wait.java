@@ -4,72 +4,78 @@
 //  DUE DATE:		:  23042020
 //  HONOR CODE:		:  "On my honor, I have not given, nor received, nor witnessed any unauthorized assistance on this work."
 
-public class Pickup extends Ship
+public class Wait extends Order
 {
 	//  DATA MEMBERS  /////////////////////////////////////////////////////////////////
 	
-	private String directCustomer;
-	private boolean ready;
+	private int shipDate;
+	private boolean cancelled;
 	
 	//  CONSTRUCTORS  /////////////////////////////////////////////////////////////////
 	
-	public Pickup()
+	public Wait()
 	{
 		super();
+		this.cancelled = false;
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public Pickup(String c, boolean r)
+	public Wait(int d, boolean c)
 	{
 		super();
-		this.directCustomer = c;
-		this.ready = r;
+		this.shipDate = d;
+		this.cancelled = c;
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public Pickup(String customer, int orderDate, Shoe[] cart, double total, int shipDate, boolean cancel, 
-			String shipCompany, String address, String tracking, double shipCost, String c, boolean r)
+	public Wait(String customer, int orderDate, Shoe[] cart, double total, int d, boolean c)
 	{
-		super(customer, orderDate, cart, total, shipDate, cancel, shipCompany, address, tracking, shipCost);
-		this.directCustomer = c;
-		this.ready = r;
+		super(customer, orderDate, cart, total);
+		this.shipDate = d;
+		this.cancelled = c;
 	}
 	
 	//  SETTERS  //////////////////////////////////////////////////////////////////////
 	
-	public void setDirectCustomer(String c)
+	public void setShipDate(int d)
 	{
-		this.directCustomer = c;
+		this.shipDate = d;
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public void setReady(boolean r)
+	public void setCancelled(boolean c)
 	{
-		this.ready = r;
+		this.cancelled = c;
 	}
 	
 	//  GETTERS  //////////////////////////////////////////////////////////////////////
 	
-	public String getSirectCustomer()
+	public int getShipDate()
 	{
-		return(this.directCustomer);
+		return(this.shipDate);
 	}
 	
 	///////////////////////////////////////////////////////////
 	
-	public boolean getReady()
+	public boolean getCancelled()
 	{
-		return(this.ready);
+		return(this.cancelled);
 	}
 	
 	//  METHODS  //////////////////////////////////////////////////////////////////////
 	
 	public String toString()
 	{
-		return(String.format("%sPICKUP CUSTOMER:  %s\nPICKUP IS READY:  %s\n", super.toString(), this.directCustomer, 
-				(this.ready) ? "YES":"NO"));
+		return(String.format("%sCANCELLED:  %s\n", super.toString(), (this.cancelled) ? "YES":"NO"));
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public void cancelOrder()
+	{
+		this.cancelled = true;
 	}
 }

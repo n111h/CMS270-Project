@@ -1,92 +1,123 @@
+//  NAME:			:  Alexander Diaz, Zachary Gould, Noah Olmstead Harvey, Julianna De Simone, Matthew Trautmann
+//  ASSIGNMENT:		:  Shoe Store [Group Project]
+//  COURSE:			:  CMS.270.1.10090
+//  DUE DATE:		:  23042020
+//  HONOR CODE:		:  "On my honor, I have not given, nor received, nor witnessed any unauthorized assistance on this work."
 
-public class Ship extends Wait{
-
-	//----------------------------Data Members----------------------------
+public class Ship extends Wait
+{
+	//  DATA MEMBERS  /////////////////////////////////////////////////////////////////
 	
 	private String shippingCompany;
 	private String address;
 	private String trackingNumber;
 	private double shippingCost;
 	
-	//----------------------------Constructors----------------------------
+	//  CONSTRUCTORS  /////////////////////////////////////////////////////////////////
 	
-	public Ship() {
+	public Ship()
+	{
 		super();
 	}
 	
-	public Ship(String shipComp, String add, String trackNum, double shipCost) {
-		
+	///////////////////////////////////////////////////////////
+	
+	public Ship(String c, String a, String t, double s)
+	{
 		super();
-		shippingCompany = shipComp;
-		address = add;
-		trackingNumber = trackNum;
-		shippingCost = shipCost;
-		
+		this.shippingCompany = c;
+		this.address = a;
+		this.trackingNumber = t;
+		this.shippingCost = s;
 	}
 	
-	public Ship(String cust, int ordDate, Shoe[] crt, double ttl, int expShipDate, boolean cnl, String shipComp, String add, String trackNum, double shipCost) {
-		
-		super(cust, ordDate, crt, ttl, expShipDate, cnl);
-		shippingCompany = shipComp;
-		address = add;
-		trackingNumber = trackNum;
-		shippingCost = shipCost;
-		
+	///////////////////////////////////////////////////////////
+	
+	public Ship(String customer, int orderDate, Shoe[] cart, double total, int shipDate, boolean cancel, 
+			String c, String a, String t, double s)
+	{
+		super(customer, orderDate, cart, total, shipDate, cancel);
+		this.shippingCompany = c;
+		this.address = a;
+		this.trackingNumber = t;
+		this.shippingCost = s;
 	}
 	
-	//----------------------------Getters----------------------------
+	//  SETTERS  //////////////////////////////////////////////////////////////////////
 	
-	public String getShippingCompany() {
-		return shippingCompany;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public String getTrackingNumber() {
-		return trackingNumber;
-	}
-
-	public double getShippingCost() {
-		return shippingCost;
+	public void setShippingCompany(String c)
+	{
+		this.shippingCompany = c;
 	}
 	
-	//-----------------------------Setters--------------------------
-
-	public void setShippingCompany(String shippingCompany) {
-		this.shippingCompany = shippingCompany;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public void setTrackingNumber(String trackingNumber) {
-		this.trackingNumber = trackingNumber;
-	}
-
-	public void setShippingCost(double shippingCost) {
-		this.shippingCost = shippingCost;
+	///////////////////////////////////////////////////////////
+	
+	public void setAddress(String a)
+	{
+		this.address = a;
 	}
 	
-	//----------------------------Behavior-------------------------
+	///////////////////////////////////////////////////////////
 	
-	public String trackOrder() {
-		
-		return "Tracking Number: " + trackingNumber +
-		    "\nShippinh Company: " + shippingCompany +
-	      "\nExpected Shipping Date: " + expectedShippingDate;
-		
+	public void setTrackingNumber(String t)
+	{
+		this.trackingNumber = t;
 	}
 	
-	public String toString() {
-		
-		return super.toString() + 
-	          "\nTracking Number: " + trackingNumber +
-		 "\nShippinh Company: " + shippingCompany +
-	   "\nExpected Shipping Date: " + expectedShippingDate;
-		
+	///////////////////////////////////////////////////////////
+	
+	public void setShippingCost(double s)
+	{
+		this.shippingCost = s;
 	}
 	
+	//  GETTERS  //////////////////////////////////////////////////////////////////////
+	
+	public String getShippingCompanay()
+	{
+		return(this.shippingCompany);
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public String getAddress()
+	{
+		return(this.address);
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public String getTrackingNumber()
+	{
+		return(this.trackingNumber);
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public double getShippingCost()
+	{
+		return(this.shippingCost);
+	}
+	
+	//  METHODS  //////////////////////////////////////////////////////////////////////
+	
+	public String toString()
+	{
+		return(String.format("%sSHIPPING COMPANY:  %s\nSHIPPING ADDRESS:  %s\nTRACKING NUMBER:  %s\nSHIPPING COST: $%.2f\n",
+				super.toString(), this.shippingCompany, this.address, this.trackingNumber, this.shippingCost));
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public String trackOrder()
+	{
+		return("It's on the way!");
+	}
+	
+	///////////////////////////////////////////////////////////
+	
+	public void addShippingCost()
+	{
+		this.setTotal((this.getTotal() + this.shippingCost));
+	}
 }
